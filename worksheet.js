@@ -93,18 +93,56 @@ console.log(femaleCharacters);
 
 //***SORT***
 //1. Sort by mass
+const sortByMass = characters.sort((a, b) => a.mass - b.mass);
+console.log(sortByMass);
+
 //2. Sort by height
+const sortByHeight = characters.sort((a, b) => a.height - b.height);
+console.log(sortByHeight);
+
 //3. Sort by name
+const byName = characters.sort((a, b) => {
+    if(a.name < b.name) return -1;
+    return 1;
+});
+console.log(byName);
+
 //4. Sort by gender
+const byGender = characters.sort((char) => {
+    if(char.gender === 'male') return 1;
+    return -1;
+});
 
 //***EVERY***
 //1. Does every character have blue eyes?
+const allBlueEyes = characters.every(character => character.eye_color === 'blue');
+console.log(allBlueEyes);
+
 //2. Does every character have mass more than 40?
+const allMassOver40 = characters.every(character => character.mass > 40);
+console.log(allMassOver40);
+
 //3. Is every character shorter than 200?
+const allShorterThan200 = characters.every(character => character.height < 200);
+console.log(allShorterThan200);
+
 //4. Is every character male?
+const allMale = characters.every(character => character.gender === 'male');
+console.log(allMale);
 
 //***SOME***
 //1. Is there at least one male character?
+const anyMale = characters.some(character => character.gender === 'male');
+console.log(anyMale);
+
 //2. Is there at least one character with blue eyes?
+const anyBlueEyes = characters.some(character => character.eye_color === 'blue');
+console.log(anyBlueEyes);
+
 //3. Is there at least one character taller than 210?
+const anyTallerThan200 = characters.some(character => character.height > 210);
+console.log(anyTallerThan200);
+
 //4. Is there at least one character that has mass less than 50?
+const anyMassUnder50 = characters.some(character => character.mass < 50);
+console.log(anyMassUnder50);
